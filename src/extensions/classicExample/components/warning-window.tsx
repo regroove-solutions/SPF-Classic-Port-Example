@@ -3,7 +3,7 @@ import *  as React from "react";
 import styles from "./../styles/ClassicExample.module.scss";
 import { IWarningWindowComponentProps } from "../interfaces/IWarningWindowComponentProps";
 
-export default class WarningWindowComponent extends React.Component<any, IWarningWindowComponentProps> {
+export class WarningWindowComponent extends React.Component<any, IWarningWindowComponentProps> {
   render(): any {
     return (
       <div className={styles.topBar}>

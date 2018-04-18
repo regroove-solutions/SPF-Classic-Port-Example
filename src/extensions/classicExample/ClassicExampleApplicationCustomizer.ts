@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as ReactDom from "react-dom";
+import * as ReactDOM from "react-dom";
 
 import { override } from "@microsoft/decorators";
 import { Log } from "@microsoft/sp-core-library";
@@ -10,7 +10,7 @@ import {
 import * as strings from "ClassicExampleApplicationCustomizerStrings";
 import { Promise } from "es6-promise";
 import { SPPermission } from "@microsoft/sp-page-context";
-import WarningWindowComponent from "./components/warning-window";
+import { WarningWindowComponent } from "./components/warning-window";
 
 const LOG_SOURCE: string = "ClassicExampleApplicationCustomizer";
 
@@ -56,7 +56,7 @@ export default class ClassicExampleApplicationCustomizer
 
         if (this._topPlaceholder.domElement) {
 
-          ReactDom.render(
+          ReactDOM.render(
             React.createElement(
               WarningWindowComponent,
               this.context.pageContext.web.permissions.hasPermission(SPPermission.managePermissions)
