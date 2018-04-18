@@ -1,7 +1,7 @@
-import *  as React from "react";
-
-import styles from "./../styles/ClassicExample.module.scss";
+import * as React from "react";
 import { IWarningWindowComponentProps } from "../interfaces/IWarningWindowComponentProps";
+import styles from "./../styles/ClassicExample.module.scss";
+
 
 export class WarningWindowComponent extends React.Component<any, IWarningWindowComponentProps> {
   render(): any {

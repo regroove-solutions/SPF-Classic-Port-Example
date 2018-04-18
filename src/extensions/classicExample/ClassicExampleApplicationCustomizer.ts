@@ -1,16 +1,14 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-
 import { override } from "@microsoft/decorators";
+import { BaseApplicationCustomizer, PlaceholderContent, PlaceholderName } from "@microsoft/sp-application-base";
 import { Log } from "@microsoft/sp-core-library";
-import {
-  BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
-} from "@microsoft/sp-application-base";
-
+import { SPPermission } from "@microsoft/sp-page-context";
 import * as strings from "ClassicExampleApplicationCustomizerStrings";
 import { Promise } from "es6-promise";
-import { SPPermission } from "@microsoft/sp-page-context";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import { WarningWindowComponent } from "./components/warning-window";
+
+
 
 const LOG_SOURCE: string = "ClassicExampleApplicationCustomizer";
 
