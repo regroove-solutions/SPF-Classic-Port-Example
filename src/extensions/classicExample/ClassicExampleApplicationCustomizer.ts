@@ -1,39 +1,19 @@
 import { override } from "@microsoft/decorators";
 import { BaseApplicationCustomizer, PlaceholderContent, PlaceholderName } from "@microsoft/sp-application-base";
-import { Log } from "@microsoft/sp-core-library";
 import { SPPermission } from "@microsoft/sp-page-context";
-import * as strings from "ClassicExampleApplicationCustomizerStrings";
 import { Promise } from "es6-promise";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { WarningWindowComponent } from "./components/warning-window";
 
-
-
-const LOG_SOURCE: string = "ClassicExampleApplicationCustomizer";
-
-/**
- * If your command set uses the ClientSideComponentProperties JSON input,
- * it will be deserialized into the BaseExtension.properties object.
- * You can define an interface to describe it.
- */
-export interface IClassicExampleApplicationCustomizerProperties {
-  testMessage: string;
-}
-
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class ClassicExampleApplicationCustomizer
-  extends BaseApplicationCustomizer<IClassicExampleApplicationCustomizerProperties> {
+  extends BaseApplicationCustomizer<{}> {
 
   private _topPlaceholder: PlaceholderContent | undefined;
-  private _bottomPlaceholder: PlaceholderContent | undefined;
 
   @override
   public onInit(): Promise<void> {
-    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
-
-    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
-
     this._renderPlaceHolders();
     return Promise.resolve();
   }
