@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "classic-example-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/classicExample/ClassicExampleApplicationCustomizer.js",
+          "manifest": "./src/extensions/classicExample/ClassicExampleApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ClassicExampleApplicationCustomizerStrings": "lib/extensions/classicExample/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="ClassicExample"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="d08036aa-d89e-4c5e-866b-8ffd579ed2b5"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
