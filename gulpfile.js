@@ -106,7 +106,7 @@ const makeModules = function (gulp) {
     }))
     .pipe(gulp.dest('temp/gulp')))
 
-  tasks.push(gulp.src("./src/extensions/classicExample/classic.ts")
+  tasks.push(gulp.src("./src/extensions/classicExample/ClassicVersion.ts")
     .pipe(webpack(require("./webpack.config.js")))
     .pipe(gulp.dest("dist/classic")));
   return merge(tasks);

@@ -5,7 +5,7 @@
     "classic-example-application-customizer": {
       "components": [
         {
-          "entrypoint": "./lib/extensions/classicExample/ClassicExampleApplicationCustomizer.js",
+          "entrypoint": "./lib/extensions/classicExample/ModernVersion.js",
           "manifest": "./src/extensions/classicExample/ClassicExampleApplicationCustomizer.manifest.json"
         }
       ]

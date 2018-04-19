@@ -6,7 +6,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { WarningWindowComponent } from "./components/warning-window";
 
-/** A Custom Action which can be run during execution of a Client Side Application */
 export default class ClassicExampleApplicationCustomizer
   extends BaseApplicationCustomizer<{}> {
 
@@ -18,9 +17,6 @@ export default class ClassicExampleApplicationCustomizer
     return Promise.resolve();
   }
   private _renderPlaceHolders(): void {
-
-    this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(", ");
-
 
     if (!this._topPlaceholder) {
       this._topPlaceholder =

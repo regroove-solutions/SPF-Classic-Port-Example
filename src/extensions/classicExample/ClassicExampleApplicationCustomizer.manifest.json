@@ -2,7 +2,7 @@
   "$schema": "https://dev.office.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
   "id": "d08036aa-d89e-4c5e-866b-8ffd579ed2b5",
-  "alias": "ClassicExampleApplicationCustomizer",
+  "alias": "ModernVersion",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",
 

@@ -17,7 +17,7 @@ var babelOptions = {
 
 module.exports = {
   entry: [
-    "./src/extensions/classicExample/classic.ts"
+    "./src/extensions/classicExample/ClassicVersion.ts"
   ],
   module: {
     rules: [
