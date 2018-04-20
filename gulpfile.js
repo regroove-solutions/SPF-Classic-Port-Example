@@ -1,3 +1,11 @@
+/**
+ * This is a combination of various Microsoft gulp tasks included
+ * through SPFx. I've amalgameted them into one file, so that the
+ * compiling that goes into the bundling the classic version of an
+ * app matches as closely as possible to the modern version.
+ */
+
+
 'use strict';
 
 const gulp = require('gulp');
@@ -40,15 +48,26 @@ const buildClassicTask = build.subTask("build-classic", function (gulp, buildOpt
   return makeModules(gulp);
 });
 
+/**
+ * Transforms the scss file into css
+ * @param {} gulp
+ */
 const makeCss = function (gulp) {
+  // Enter your own base scss path here.
   gulp.src("./src/extensions/classicExample/styles/ClassicExample.module.scss")
     .pipe(sass.sync())
     .pipe(gulp.dest("temp/gulp"))
 };
 
+/**
+ * Creates the css modules that typescript uses. This took the longest time to
+ * figure out.
+ * @param {*} gulp
+ */
 const makeModules = function (gulp) {
 
   const tasks = [];
+  // Enter your own base scss path here.
   const baseTask = gulp.src("./src/extensions/classicExample/styles/ClassicExample.module.scss")
     .pipe(sass.sync())
     .pipe(postcss(postCSSPlugins))
@@ -61,6 +80,11 @@ const makeModules = function (gulp) {
   tasks.push(baseTask.pipe(clone())
     .pipe(gulp.dest("temp/gulp")));
 
+  /**
+   * Here's the kicker. The way this entire file works is it turns the scss into
+   * css, then translates that into JSON, which creates a js and ts module
+   * for use in the app.
+   */
   tasks.push(baseTask.pipe(clone())
     .pipe(texttojs({
       ext: scssTsExtName,
@@ -106,13 +130,16 @@ const makeModules = function (gulp) {
     }))
     .pipe(gulp.dest('temp/gulp')))
 
+  // This is where the entry point for your classic app should go
   tasks.push(gulp.src("./src/extensions/classicExample/ClassicVersion.ts")
     .pipe(webpack(require("./webpack.config.js")))
     .pipe(gulp.dest("dist/classic")));
   return merge(tasks);
 }
 
-
+/**
+ * This adds the tasks to gulp command list included in the SPF framework
+ */
 build.task("build-classic", buildClassicTask);
 
 build.initialize(gulp);

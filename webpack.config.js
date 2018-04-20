@@ -1,3 +1,8 @@
+/**
+ * This is a pretty standard webpack file setup for react.
+ * You'll need to enter the entry point for your classic app below.
+ */
+
 const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -17,6 +22,7 @@ var babelOptions = {
 
 module.exports = {
   entry: [
+    // This should be the path for your classic version.
     "./src/extensions/classicExample/ClassicVersion.ts"
   ],
   module: {
@@ -58,6 +64,8 @@ module.exports = {
   },
   plugins: [
     new webpack.NormalModuleReplacementPlugin(
+      // You'll want to change "ClassicExample" to the
+      // name of your own style file.
       /styles\/ClassicExample\.module/,
       __dirname + "/temp/gulp/ClassicExample.module.scss"
     ),
